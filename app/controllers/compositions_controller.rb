@@ -1,5 +1,5 @@
 class CompositionsController < ApplicationController
-  require 'byebug'
+
 def show
   @composition = Composition.find(params[:id])
   render json: @composition
@@ -30,10 +30,4 @@ private
 def composition_params
   params.require(:composition).permit(:name, :layout, :bpm, :user_id)
 end
-
-
-
-
-
-
 end
