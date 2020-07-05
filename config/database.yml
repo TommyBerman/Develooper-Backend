@@ -83,3 +83,4 @@ production:
   database: Develooper_Backend_production
   username: Develooper_Backend
   password: <%= ENV['DEVELOOPER_BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

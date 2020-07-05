@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_07_03_185154) do
 
   create_table "sound_samples", force: :cascade do |t|
     t.string "name"
-    t.binary "bin_data"
+    t.binary "bin_data", limit: 1048576
     t.string "mime_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
