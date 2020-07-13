@@ -1,9 +1,9 @@
 class CompositionsController < ApplicationController
 
-def show
-  @composition = Composition.find(params[:id])
-  render json: @composition
-end
+# def show
+#   @composition = Composition.find(params[:id])
+#   render json: @composition
+# end
 
 def list
 # byebug
@@ -13,8 +13,12 @@ end
 
 def create
 # byebug
-  @composition = Composition.new(composition_params)
+  @composition = Composition.create(composition_params)
+  if @composition.save
   render json: @composition
+  else
+    render json: @composition.errors, status: :unprocessable_entity
+  end
 end
 
 def update
